@@ -1,23 +1,28 @@
 import { ArticleDetailLayout } from 'layouts/ArticleDetail'
-import { GetServerSideProps, IArticle, ReactNode } from 'lib/types'
-import { getArticleBySlug } from 'lib/utils/blog/getArticles'
+import { ReactNode } from 'lib/types'
 
 import MainLayout from 'layouts/Main'
 import { ArticleNotFounded } from 'components/pages/recursos/common/ArticleNotFounded'
+import { useArticles } from 'lib/hooks/useArticles'
+import { Spinner } from 'components/common/Loaders'
 
-export const AlmaArticleDetail = ({ article }: { article: IArticle }) => {
-  if (!article) return <ArticleNotFounded />
+export const AlmaArticleDetail = () => {
+  const { articles, articlesIsLoading } = useArticles('alma')
+
+  if (articlesIsLoading) return <Spinner />
+
+  if (!articles[0]) return <ArticleNotFounded />
 
   return (
     <ArticleDetailLayout
-      image={article.imageSrc}
-      tag={article.tag}
-      title={article.title}
-      author={article.authorName || 'Desconocido'}
-      publishied={article.date}
-      authorProfesion={article.authorProfesion}
+      image={articles[0].imageSrc}
+      tag={articles[0].tag}
+      title={articles[0].title}
+      author={articles[0].authorName || 'Desconocido'}
+      publishied={articles[0].date}
+      authorProfesion={articles[0].authorProfesion}
     >
-      {article && article.content}
+      {articles[0] && articles[0].content}
     </ArticleDetailLayout>
   )
 }
@@ -29,11 +34,3 @@ AlmaArticleDetail.getLayout = (page: ReactNode) => (
 )
 
 export default AlmaArticleDetail
-
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const article: IArticle = await getArticleBySlug(params.slug)
-
-  return {
-    props: { article }
-  }
-}

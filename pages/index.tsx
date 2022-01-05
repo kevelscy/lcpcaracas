@@ -2,10 +2,10 @@ import Head from 'next/head'
 
 import MainLayout from 'layouts/Main'
 
-import { IHomeProps, ReactNode } from 'lib/types'
+import { ReactNode } from 'lib/types'
 import { Slider, WorshipSchedule, Resources, Devotionals, PrayRequest } from 'components/pages/home'
 
-export const Home = ({ articles, sliderItems }: IHomeProps) => {
+export const Home = () => {
   return (
     <>
       <Head>

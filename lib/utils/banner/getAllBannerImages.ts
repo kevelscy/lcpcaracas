@@ -13,6 +13,9 @@ export const getAllBannerImages = async () => {
   const topicOfTheMonthImgMobile: string[] = []
   const topicOfTheMonthImgDesktop: string[] = []
 
+  console.log('eventsListRef', eventsListRef)
+  console.log('topicOfTheMonthListRef', topicOfTheMonthListRef)
+
   const eventListPromises = eventsListRef.items.map(async (eventImgRef) => {
     const imgName = eventImgRef.name.toLowerCase().trim()
     const imgFullPathRef = ref(storage, eventImgRef.fullPath)
