@@ -3,26 +3,28 @@ import { ReactNode } from 'lib/types'
 
 import MainLayout from 'layouts/Main'
 import { ArticleNotFounded } from 'components/pages/recursos/common/ArticleNotFounded'
-import { useArticles } from 'lib/hooks/useArticles'
 import { Spinner } from 'components/common/Loaders'
+import { useRouter } from 'next/router'
+import { useArticles } from 'lib/hooks/useArticles'
 
 export const AlmaArticleDetail = () => {
-  const { articles, articlesIsLoading } = useArticles('alma')
+  const router = useRouter()
+  const { articleBySlug, articlesIsLoading } = useArticles('alma', router.query.slug)
 
   if (articlesIsLoading) return <Spinner />
 
-  if (!articles[0]) return <ArticleNotFounded />
+  if (!articleBySlug) return <ArticleNotFounded />
 
   return (
     <ArticleDetailLayout
-      image={articles[0].imageSrc}
-      tag={articles[0].tag}
-      title={articles[0].title}
-      author={articles[0].authorName || 'Desconocido'}
-      publishied={articles[0].date}
-      authorProfesion={articles[0].authorProfesion}
+      image={articleBySlug.imageSrc}
+      tag={articleBySlug.tag}
+      title={articleBySlug.title}
+      author={articleBySlug.authorName || 'Desconocido'}
+      publishied={articleBySlug.date}
+      authorProfesion={articleBySlug.authorProfesion}
     >
-      {articles[0] && articles[0].content}
+      {articleBySlug && articleBySlug.content}
     </ArticleDetailLayout>
   )
 }
