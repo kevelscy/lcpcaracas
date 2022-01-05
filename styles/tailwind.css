@@ -1,0 +1,23 @@
+@import './utils/fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './utils/footer.css';
+@import './utils/swiper.css';
+@import './utils/button.css';
+@import './utils/resources.css';
+@import './utils/articles.css';
+@import './utils/prayRequest.css';
+@import './utils/loaders.css';
+@import './utils/inputs.css';
+@import './utils/modals.css';
+@import './utils/logo.css';
+@import './utils/styledMarkdown.css';
+@import './utils/icons.css';
+@import './utils/tooltips.css';
+@import './utils/pages.css';
+@import './utils/index.css';
+
+@import './components/events.css';

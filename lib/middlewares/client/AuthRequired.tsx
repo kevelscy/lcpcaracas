@@ -1,0 +1,18 @@
+import { useContext, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { AuthContext } from 'lib/contexts/UserFirebaseAuth'
+
+export const AuthRequired = ({ children }) => {
+  const authFirebase = useContext(AuthContext)
+  const router = useRouter()
+
+  useEffect(() => {
+    !authFirebase?.currentUser && router.push('/login')
+  }, [authFirebase?.currentUser])
+
+  if (authFirebase?.currentUser) {
+    return <>{children}</>
+  } else {
+    return <></>
+  }
+}
