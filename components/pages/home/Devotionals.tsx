@@ -1,7 +1,9 @@
-import { ArticleSkeletonList } from 'components/common/Loaders/Skeletons'
 import { PostsList } from 'components/pages/recursos/common'
+import { useArticles } from 'lib/hooks/useArticles'
 
-export const Devotionals = ({ articles }) => {
+export const Devotionals = () => {
+  const { articles } = useArticles()
+
   return (
     <section className='py-8 px-4 text-center'>
       <h5 className='text-3xl text-primary-500 font-black lg:text-4xl 3xl:text-5xl'>
@@ -13,7 +15,7 @@ export const Devotionals = ({ articles }) => {
       {
         articles.length !== 0
           ? <PostsList articles={articles.slice(0, 6)} />
-          : <ArticleSkeletonList />
+          : <div className='text-center font-black text-2xl'>Sin Articulos</div>
       }
     </section>
   )
