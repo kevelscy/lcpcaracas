@@ -44,7 +44,7 @@ export const ReservacionesPage: Page = () => {
             alt='Reservaciones LCP'
           />
         </div>
-        <div className='sm:hidden w-3/4 max-w-[280px] h-fit -z-10 absolute inset-0 m-auto'>
+        <div className='sm:hidden w-3/4 max-w-[280px] h-fit -z-10 absolute inset-0 m-auto transform -rotate-180'>
           <Image
             src={reservacionesBgMobile}
             alt='La Casa de mi Padre'
