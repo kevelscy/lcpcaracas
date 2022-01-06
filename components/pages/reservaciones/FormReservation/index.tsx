@@ -55,49 +55,52 @@ export const NewFormReservation = ({ reservations }: TFormReservationsProps) => 
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='w-full flex flex-col justify-center items-center text-center'
+        style={{ backdropFilter: 'saturate(180%) blur(5px)', backgroundColor: '#5488ff2e' }}
+        className='w-full max-w-md rounded-md text-black'
       >
-        <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Reservaciones</h3>
-        <br />
+        <div className='w-full flex flex-col justify-center items-center text-center p-4'>
+          <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Reservaciones</h3>
+          <br />
 
-        <div className='w-full py-0.5 px-2 rounded-full bg-secondary-500 flex justify-center items-center max-w-md mx-auto'>
-          <IconWarning width={28} height={28} classes="mr-2 mt-1" />
-          <span className='text-xs xs:text-sm md:text-xs'>SE REQUIERE EL USO DE DOBLE MASCARILLAS</span>
-        </div>
-        <br />
+          <div className='w-full py-0.5 px-2 rounded-full bg-secondary-500 flex justify-center items-center max-w-md mx-auto'>
+            <IconWarning width={28} height={28} classes="mr-2 mt-1" />
+            <span className='text-xs xs:text-sm md:text-xs font-bold text-white'>SE REQUIERE EL USO DE DOBLE MASCARILLAS</span>
+          </div>
+          <br />
 
-        <section className='w-full max-w-md mx-auto'>
-          <BasicUserInputs
-            usersReservation={reservations.usersReservation}
-            registerInputForm={register}
-            errorsInputForm={errors}
-          />
-        </section>
-        <br />
+          <section className='w-full max-w-md mx-auto'>
+            <BasicUserInputs
+              usersReservation={reservations.usersReservation}
+              registerInputForm={register}
+              errorsInputForm={errors}
+            />
+          </section>
+          <br />
 
-        <section className='text-center max-w-xl mx-auto'>
-          <span className='font-bold 3xl:text-xl'>Por favor seleccione el horario al que desea asistir</span>
-          <SelectWorship
-            setValueFormInput={setValue}
-            reservations={reservations}
-            registerInputForm={register}
-            errorsInputForm={errors}
-          />
-        </section>
+          <section className='text-center max-w-xl mx-auto'>
+            <span className='font-bold 3xl:text-xl'>Por favor seleccione el horario al que desea asistir</span>
+            <SelectWorship
+              setValueFormInput={setValue}
+              reservations={reservations}
+              registerInputForm={register}
+              errorsInputForm={errors}
+            />
+          </section>
 
-        <section className='w-full max-w-md mx-auto'>
-          <SelectChairs
-            reservations={reservations}
-            currentWorshipId={watchWorship}
-            registerInputForm={register}
-            errorsInputForm={errors}
-          />
-        </section>
-        <br />
+          <section className='w-full max-w-md mx-auto mt-4'>
+            <SelectChairs
+              reservations={reservations}
+              currentWorshipId={watchWorship}
+              registerInputForm={register}
+              errorsInputForm={errors}
+            />
+          </section>
+          <br />
 
-        <Button classes='py-1' tabIndex={9} type='submit'>
+          <Button classes='py-1' tabIndex={9} type='submit'>
           Reservar
-        </Button>
+          </Button>
+        </div>
       </form>
     </>
   )

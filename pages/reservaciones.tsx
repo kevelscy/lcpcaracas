@@ -11,7 +11,8 @@ import { NewFormReservation } from 'components/pages/reservaciones/FormReservati
 import { DisabledReservations } from 'components/pages/reservaciones/DisabledReservations'
 import { FullReservations } from 'components/pages/reservaciones/FullReservations'
 
-import reservacionesBg from 'public/img/reservacionesBg.webp'
+import reservacionesBgDesktop from 'public/img/reservacionesBg-desktop.webp'
+import reservacionesBgMobile from 'public/img/reservacionesBg-mobile.webp'
 
 export const ReservacionesPage: Page = () => {
   const { reservations, reservationsIsLoading } = useReservations()
@@ -32,19 +33,29 @@ export const ReservacionesPage: Page = () => {
         <meta name='description' content='Reserva en los servicios de La Casa de mi Padre' />
       </Head>
 
-      <div className='min-h-screen-14 w-full'>
-        <Image
-          src={reservacionesBg}
-          placeholder='blur'
-          layout='fill'
-          objectFit='cover'
-          quality={100}
-          priority
-          className='headerPage__nosotros--BgImg '
-          alt='Reservaciones LCP'
-        />
+      <div className='min-h-screen-14 w-full flex flex-col sm:flex-row justify-center items-center relative'>
+        <div className='max-w-4xl w-full px-4 mx-auto hidden sm:block'>
+          <Image
+            src={reservacionesBgDesktop}
+            placeholder='blur'
+            objectFit='cover'
+            quality={100}
+            priority
+            alt='Reservaciones LCP'
+          />
+        </div>
+        <div className='sm:hidden w-3/4 max-w-[280px] h-fit -z-10 absolute inset-0 m-auto'>
+          <Image
+            src={reservacionesBgMobile}
+            alt='La Casa de mi Padre'
+            placeholder='blur'
+            objectFit="cover"
+            priority
+            quality={100}
+          />
+        </div>
 
-        <div className='w-full h-full flex justify-center items-center absolute text-white px-4 pt-20 md:pt-16'>
+        <div className='w-full h-full flex justify-center items-center absolute text-white px-4 pt-20 md:pt-16 gap-x-16'>
           {
             reservationsIsLoading
               ? <Spinner />

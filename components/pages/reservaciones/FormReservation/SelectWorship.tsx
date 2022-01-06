@@ -108,14 +108,14 @@ export const SelectWorship = ({ reservations, registerInputForm, errorsInputForm
                       {...registerInputForm('worship', rules.worship)}
                       value={worship.id}
                     />
-                    <span>{worship.schedule}</span>
+                    <span className='font-bold'>{worship.schedule}</span>
                   </label>
                 </div>
               )
             } else {
               return (
-                <div className='selectItemRadio' key={worship.id}>
-                  <span className='font-medium'>{worship.label}</span> <br />
+                <div className='selectItemRadio font-bold' key={worship.id}>
+                  <span>{worship.label}</span> <br />
                   <small className='text-red-600 select-none'>No Disponible</small>
                 </div>
               )

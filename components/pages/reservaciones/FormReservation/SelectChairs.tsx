@@ -26,7 +26,7 @@ export const SelectChairs = ({ reservations, currentWorshipId, registerInputForm
   }, [currentWorshipId, reservations])
 
   return (
-    <div className='w-full flex justify-center items-center'>
+    <div className='w-full flex justify-center items-center font-bold'>
       <div className='w-full mr-2'>
         <label htmlFor='chairs'>Numero de <br className='md:hidden' /> Asientos:</label>
         {errorsInputForm.chairs && <p className='text-red-600'>{errorsInputForm.chairs.message}</p>}
@@ -35,7 +35,7 @@ export const SelectChairs = ({ reservations, currentWorshipId, registerInputForm
           id='chairs'
           name='chairs'
           tabIndex={7}
-          className='relative w-full px-3 py-1.5 my-2 bg-[rgba(255,255,255,.13)] rounded-2xl outline-none appearance-none leading-8'
+          className='relative w-full px-3 py-1.5 my-2 bg-[rgba(255,255,255,.13)] rounded-2xl border border-solid border-black outline-none appearance-none leading-8'
           {...registerInputForm('chairs', rules.chairs)}
         >
           {
@@ -56,7 +56,7 @@ export const SelectChairs = ({ reservations, currentWorshipId, registerInputForm
           id='kidChairs'
           name='kidChairs'
           tabIndex={8}
-          className='relative w-full px-3 py-1.5 my-2 bg-[rgba(255,255,255,.13)] rounded-2xl outline-none appearance-none leading-8'
+          className='relative w-full px-3 py-1.5 my-2 bg-[rgba(255,255,255,.13)] rounded-2xl border border-solid border-black outline-none appearance-none leading-8'
           {...registerInputForm('kidChairs', rules.kidChairs)}
         >
           {
