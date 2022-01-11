@@ -17,13 +17,13 @@ interface ISelectWorshipProps {
 // La logica de este componente se puede mejorar
 export const SelectWorship = ({ reservations, registerInputForm, errorsInputForm, setValueFormInput }: ISelectWorshipProps) => {
   const [worships, setWorship] = useState([
-    // {
-    //   id: reservations.FIRST_WORSHIP.id,
-    //   label: reservations.FIRST_WORSHIP.label,
-    //   reservations: reservations.FIRST_WORSHIP.total,
-    //   schedule: reservations.FIRST_WORSHIP.schedule,
-    //   isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS,
-    // },
+     {
+       id: reservations.FIRST_WORSHIP.id,
+       label: reservations.FIRST_WORSHIP.label,
+       reservations: reservations.FIRST_WORSHIP.total,
+       schedule: reservations.FIRST_WORSHIP.schedule,
+       isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS,
+     },
     {
       id: reservations.SECOND_WORSHIP.id,
       label: reservations.SECOND_WORSHIP.label,
@@ -40,13 +40,13 @@ export const SelectWorship = ({ reservations, registerInputForm, errorsInputForm
     }
   ])
 
-  // useEffect(() => {
-  //   if (reservations.FIRST_WORSHIP.total >= reservations.MAX_RESERVATIONS) {
-  //     if (reservations.SECOND_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'SECOND_WORSHIP')
-  //     else if (reservations.THIRD_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'THIRD_WORSHIP')
-  //     else return;
-  //   }
-  // }, [reservations.FIRST_WORSHIP.total])
+   useEffect(() => {
+     if (reservations.FIRST_WORSHIP.total >= reservations.MAX_RESERVATIONS) {
+       if (reservations.SECOND_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'SECOND_WORSHIP')
+       else if (reservations.THIRD_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'THIRD_WORSHIP')
+       else return;
+     }
+   }, [reservations.FIRST_WORSHIP.total])
 
   useEffect(() => {
     if (reservations.SECOND_WORSHIP.total >= reservations.MAX_RESERVATIONS) {
@@ -66,13 +66,13 @@ export const SelectWorship = ({ reservations, registerInputForm, errorsInputForm
 
   useEffect(() => {
     setWorship([
-      // {
-      //   id: 'FIRST_WORSHIP',
-      //   label: reservations.FIRST_WORSHIP.label,
-      //   reservations: reservations.FIRST_WORSHIP.total,
-      //   schedule: reservations.FIRST_WORSHIP.schedule,
-      //   isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS,
-      // },
+       {
+         id: 'FIRST_WORSHIP',
+         label: reservations.FIRST_WORSHIP.label,
+         reservations: reservations.FIRST_WORSHIP.total,
+         schedule: reservations.FIRST_WORSHIP.schedule,
+         isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS,
+       },
       {
         id: 'SECOND_WORSHIP',
         label: reservations.SECOND_WORSHIP.label,
