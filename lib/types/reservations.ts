@@ -33,7 +33,6 @@ export type TWorship = {
 export interface IReservations {
   FIRST_WORSHIP: TWorship
   SECOND_WORSHIP: TWorship
-  THIRD_WORSHIP: TWorship
   MAX_RESERVATIONS: number
   usersReservation?: any[]
   status?: boolean
@@ -45,7 +44,6 @@ export interface IUseReservations {
     usersReservation: any[]
     FIRST_WORSHIP: TWorship
     SECOND_WORSHIP: TWorship
-    THIRD_WORSHIP: TWorship
     MAX_RESERVATIONS: number
   }
   reservationsIsLoading: boolean
@@ -58,7 +56,6 @@ export type TFormReservationsProps = {
     usersReservation: any[]
     FIRST_WORSHIP: TWorship
     SECOND_WORSHIP: TWorship
-    THIRD_WORSHIP: TWorship
     MAX_RESERVATIONS: number
   }
   reservationsIsLoading?: boolean
@@ -168,7 +165,7 @@ export type TReservationOptions = TReservationOption[]
 
 /// ////////////////////////////////////////////////////
 
-export type TWorshipId = 'FIRST_WORSHIP' | 'SECOND_WORSHIP' | 'THIRD_WORSHIP'
+export type TWorshipId = 'FIRST_WORSHIP' | 'SECOND_WORSHIP'
 
 export interface IDataFormReservation {
   fullName: string

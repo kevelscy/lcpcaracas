@@ -48,23 +48,16 @@ export const config = {
     WORSHIPS: {
       FIRST_WORSHIP: {
         id: 'firstWorship',
-        hour: '8:30 a.m',
-        schedule: '1er Servicio (8:30 a.m)',
+        hour: '9:00 a.m',
+        schedule: '1er Servicio (9:00 a.m)',
         label: 'Primer Servicio'
       },
 
       SECOND_WORSHIP: {
         id: 'secondWorship',
-        hour: '10:15 a.m',
-        schedule: '2do Servicio (10:15 a.m)',
+        hour: '11:00 a.m',
+        schedule: '2do Servicio (11:00 a.m)',
         label: 'Segundo Servicio'
-      },
-
-      THIRD_WORSHIP: {
-        id: 'thirdWorship',
-        hour: '12:00 p.m',
-        schedule: '3er Servicio (12:00 p.m)',
-        label: 'Tercer Servicio'
       }
     }
   }

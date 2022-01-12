@@ -8,6 +8,7 @@ import { DefaultItem } from './Items'
 
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
+import { LocalEvents } from './Items/LocalEvents'
 
 SwiperCore.use([Pagination, Autoplay])
 
@@ -24,6 +25,11 @@ export const Slider = () => {
           <SwiperSlide>
             <DefaultItem />
           </SwiperSlide>
+
+          <SwiperSlide>
+            <LocalEvents />
+          </SwiperSlide>
+
           {/* {
             (topicOfTheMonth?.desktop?.length >= 1 || topicOfTheMonth?.mobile?.length >= 1) && (
               <SwiperSlide>

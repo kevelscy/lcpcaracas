@@ -17,75 +17,50 @@ interface ISelectWorshipProps {
 // La logica de este componente se puede mejorar
 export const SelectWorship = ({ reservations, registerInputForm, errorsInputForm, setValueFormInput }: ISelectWorshipProps) => {
   const [worships, setWorship] = useState([
-    // {
-    //   id: reservations.FIRST_WORSHIP.id,
-    //   label: reservations.FIRST_WORSHIP.label,
-    // reservations: reservations.FIRST_WORSHIP.total,
-    //  schedule: reservations.FIRST_WORSHIP.schedule,
-    //  isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS,
-    // },
+    {
+      id: reservations.FIRST_WORSHIP.id,
+      label: reservations.FIRST_WORSHIP.label,
+      reservations: reservations.FIRST_WORSHIP.total,
+      schedule: reservations.FIRST_WORSHIP.schedule,
+      isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS
+    },
     {
       id: reservations.SECOND_WORSHIP.id,
       label: reservations.SECOND_WORSHIP.label,
       reservations: reservations.SECOND_WORSHIP.total,
       schedule: reservations.SECOND_WORSHIP.schedule,
       isAviable: reservations.SECOND_WORSHIP.total < reservations.MAX_RESERVATIONS
-    },
-    {
-      id: reservations.THIRD_WORSHIP.id,
-      label: reservations.THIRD_WORSHIP.label,
-      reservations: reservations.THIRD_WORSHIP.total,
-      schedule: reservations.THIRD_WORSHIP.schedule,
-      isAviable: reservations.THIRD_WORSHIP.total < reservations.MAX_RESERVATIONS
     }
   ])
 
-   //useEffect(() => {
-   //  if (reservations.FIRST_WORSHIP.total >= reservations.MAX_RESERVATIONS) {
-   //    if (reservations.SECOND_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'SECOND_WORSHIP')
-   //    else if (reservations.THIRD_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'THIRD_WORSHIP')
-   //    else return;
-   //  }
-   //}, [reservations.FIRST_WORSHIP.total])
+  useEffect(() => {
+    if (reservations.FIRST_WORSHIP.total >= reservations.MAX_RESERVATIONS) {
+      if (reservations.SECOND_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'SECOND_WORSHIP')
+    }
+  }, [reservations.FIRST_WORSHIP.total])
 
   useEffect(() => {
     if (reservations.SECOND_WORSHIP.total >= reservations.MAX_RESERVATIONS) {
       if (reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'FIRST_WORSHIP')
-      else if (reservations.THIRD_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'THIRD_WORSHIP')
       else;
     }
   }, [reservations.SECOND_WORSHIP.total])
 
   useEffect(() => {
-    if (reservations.THIRD_WORSHIP.total >= reservations.MAX_RESERVATIONS) {
-      if (reservations.SECOND_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'SECOND_WORSHIP')
-      else if (reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS) setValueFormInput('worship', 'FIRST_WORSHIP')
-      else;
-    }
-  }, [reservations.THIRD_WORSHIP.total])
-
-  useEffect(() => {
     setWorship([
-       // {
-       //  id: 'FIRST_WORSHIP',
-       //  label: reservations.FIRST_WORSHIP.label,
-       //  reservations: reservations.FIRST_WORSHIP.total,
-       //  schedule: reservations.FIRST_WORSHIP.schedule,
-       //  isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS,
-       // },
+      {
+        id: 'FIRST_WORSHIP',
+        label: reservations.FIRST_WORSHIP.label,
+        reservations: reservations.FIRST_WORSHIP.total,
+        schedule: reservations.FIRST_WORSHIP.schedule,
+        isAviable: reservations.FIRST_WORSHIP.total < reservations.MAX_RESERVATIONS
+      },
       {
         id: 'SECOND_WORSHIP',
         label: reservations.SECOND_WORSHIP.label,
         reservations: reservations.SECOND_WORSHIP.total,
-        schedule: '1er Servicio (09:00 a.m)', // reservations.SECOND_WORSHIP.schedule
+        schedule: reservations.SECOND_WORSHIP.schedule,
         isAviable: reservations.SECOND_WORSHIP.total < reservations.MAX_RESERVATIONS
-      },
-      {
-        id: 'THIRD_WORSHIP',
-        label: reservations.THIRD_WORSHIP.label,
-        reservations: reservations.THIRD_WORSHIP.total,
-        schedule: '2do Servicio (11:00 p.m)', // reservations.THIRD_WORSHIP.schedule
-        isAviable: reservations.THIRD_WORSHIP.total < reservations.MAX_RESERVATIONS
       }
     ])
   }, [reservations])

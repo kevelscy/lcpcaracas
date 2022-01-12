@@ -21,9 +21,8 @@ export const ReservacionesPage: Page = () => {
 
   if (
     !reservationsIsLoading &&
-    // reservations.FIRST_WORSHIP.total >= reservations.MAX_RESERVATIONS &&
-    reservations.SECOND_WORSHIP.total >= reservations.MAX_RESERVATIONS &&
-    reservations.THIRD_WORSHIP.total >= reservations.MAX_RESERVATIONS
+    reservations.FIRST_WORSHIP.total >= reservations.MAX_RESERVATIONS &&
+    reservations.SECOND_WORSHIP.total >= reservations.MAX_RESERVATIONS
   ) return <FullReservations />
 
   return (

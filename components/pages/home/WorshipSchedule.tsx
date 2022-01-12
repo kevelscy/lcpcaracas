@@ -5,9 +5,8 @@ import { useRouter } from 'next/router'
 export const WorshipSchedule = () => {
   const router = useRouter()
   const { current: schedules } = useRef([
-    { label: 'Primer Servicio', hour: '8:30 a.m' },
-    { label: 'Segundo Servicio', hour: '10:15 a.m' },
-    { label: 'Tercer Servicio', hour: '12:30 p.m' }
+    { label: 'Primer Servicio', hour: '9:00 a.m' },
+    { label: 'Segundo Servicio', hour: '11:00 a.m' }
   ])
 
   return (
@@ -36,27 +35,18 @@ export const WorshipSchedule = () => {
       >
         {
           schedules.map((schedule, idx) => {
-            if (idx === 1) {
-              return (
-                <div
-                  className='flex flex-col justify-center items-center text-center my-4 mx-4 border-t border-b md:border-t-0 md:border-b-0 md:border-l md:border-r border-solid border-secondary-500 py-4 px-8'
-                  key={schedule.label}
-                >
-                  <span className='text-xl text-secondary-500 font-medium xl:text-2xl'>{schedule.label}</span>
-                  <span className='text-4xl font-bold text-white'>{schedule.hour}</span>
-                </div>
-              )
-            } else {
-              return (
-                <div
-                  className='flex flex-col justify-center items-center text-center my-4 mx-4 py-4 px-8'
-                  key={schedule.label}
-                >
-                  <span className='text-xl text-secondary-500 font-medium xl:text-2xl'>{schedule.label}</span>
-                  <span className='text-4xl font-bold text-white'>{schedule.hour}</span>
-                </div>
-              )
-            }
+            return (
+              <div
+                className={
+                  `flex flex-col justify-center items-center text-center my-4 py-4 px-8 
+                  ${idx === 0 && 'md:border-r border-solid border-secondary-500'}`
+                }
+                key={schedule.label}
+              >
+                <span className='text-xl text-secondary-500 font-medium xl:text-2xl'>{schedule.label}</span>
+                <span className='text-4xl font-bold text-white'>{schedule.hour}</span>
+              </div>
+            )
           })
         }
       </div>

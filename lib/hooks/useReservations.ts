@@ -4,10 +4,9 @@ import { onSnapshot } from 'firebase/firestore'
 import { RESERVATIONS_DB_REF, USERS_RESERVATION_DB_REF } from 'lib/services/firebase/utils/refs'
 import { IUseReservations } from 'lib/types'
 import { config } from 'config'
-// import { getReservations } from 'lib/utils/reservations/getReservations'
 
 const {
-  WORSHIPS: { FIRST_WORSHIP, SECOND_WORSHIP, THIRD_WORSHIP },
+  WORSHIPS: { FIRST_WORSHIP, SECOND_WORSHIP },
   MAX_RESERVATIONS
 } = config.RESERVATIONS
 
@@ -22,11 +21,6 @@ const initialReservations = {
   },
   SECOND_WORSHIP: {
     ...SECOND_WORSHIP,
-    total: 0,
-    totalKids: 0
-  },
-  THIRD_WORSHIP: {
-    ...THIRD_WORSHIP,
     total: 0,
     totalKids: 0
   }
@@ -76,16 +70,6 @@ export const useReservations = (): IUseReservations => {
             ...prevState,
             SECOND_WORSHIP: {
               ...prevState.SECOND_WORSHIP,
-              ...doc.data()
-            }
-          }))
-        }
-
-        if (doc.id === THIRD_WORSHIP.id) {
-          setReservations(prevState => ({
-            ...prevState,
-            THIRD_WORSHIP: {
-              ...prevState.THIRD_WORSHIP,
               ...doc.data()
             }
           }))

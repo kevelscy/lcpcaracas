@@ -22,12 +22,13 @@ export const NewFormReservation = ({ reservations }: TFormReservationsProps) => 
 
   const onSubmit = async (data: IDataFormReservation) => {
     setIsLoadingSubmit(true)
-    const phoneIsDuplicated = reservations.usersReservation.some(({ phone }) => phone === data.phone)
+    // const phoneIsDuplicated = reservations.usersReservation.some(({ phone }) => phone === data.phone)
 
-    if (phoneIsDuplicated) {
-      toast('¡Teléfono ya Registrado!', { type: 'error' })
-      setIsLoadingSubmit(false)
-    }
+    // if (phoneIsDuplicated) {
+    //   toast('¡Teléfono ya Registrado!', { type: 'error' })
+    //   setIsLoadingSubmit(false)
+    //   return
+    // }
 
     const { data: resultReservation } = await saveUsersReservations(data)
 
