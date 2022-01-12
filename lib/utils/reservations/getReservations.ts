@@ -9,7 +9,7 @@ type TWorship = {
 }
 
 export const getReservations = async () => {
-  let firstWorship: TWorship, secondWorship: TWorship, thirdWorship: TWorship
+  let firstWorship: TWorship, secondWorship: TWorship
   const data = await getReservationsDB()
 
   data.docs.forEach((doc) => {
@@ -19,7 +19,6 @@ export const getReservations = async () => {
 
   return {
     firstWorship,
-    secondWorship,
-    thirdWorship
+    secondWorship
   }
 }
