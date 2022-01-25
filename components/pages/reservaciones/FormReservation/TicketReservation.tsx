@@ -30,7 +30,7 @@ export const TicketReservation = ({ reservations, ticketData, closeTicket }: ITi
         </header>
 
         <section className='mt-4'>
-          <p>Fecha: 16 de Enero 2022</p>
+          <p>Fecha: 30 de Enero 2022</p>
           <p>Nombre: {ticketData.fullName.trim()}</p>
           <p>Hora: {reservations[ticketData.worship].hour}</p>
           <p>Asientos: {ticketData.chairs}</p>
