@@ -36,7 +36,7 @@ export const FormEDCReservations = () => {
 
   return (
     <form className='w-full max-w-lg mx-auto text-center' onSubmit={handleSubmit(onSubmit)}>
-      <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Inscripcciones EDC</h3>
+      <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Escuela de Crecimiento <br /> Inscripcciones</h3>
       <span className='text-red-500'>Inscripcciones solo para bautizados</span>
       <br /><br />
 

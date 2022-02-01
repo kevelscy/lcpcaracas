@@ -13,7 +13,7 @@ export const EventosPage: Page = () => {
         <title>{config.PAGE_INFO.SEO.pageTitle} - EDC</title>
       </Head>
 
-      <div className='min-h-screen w-full flex justify-center items-center pt-24'>
+      <div className='min-h-screen-14 w-full flex justify-center items-center px-4'>
         <FormEDCReservations />
       </div>
     </>
