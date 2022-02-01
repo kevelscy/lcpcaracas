@@ -18,3 +18,6 @@ export const ARTICLES_DB_REF = collection(db, 'blog', 'articles', 'content')
 
 // Tienda
 export const PRODUCTS_DB_REF = collection(db, 'shop', 'products', 'content')
+
+// Formularios/Registros - Eventos
+export const EDC_DB_REF = collection(db, 'events', 'edc', 'usersReservation')

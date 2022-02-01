@@ -1,8 +1,7 @@
 import { veryfyBasicAuth } from 'lib/utils/verifyBasicAuth'
 import { NextApiRequest, NextApiResponse } from 'lib/types'
 import fetch from 'node-fetch'
-import { getUsersReservationsDB } from 'lib/services/firebase/utils/getData'
-import { config } from 'config'
+import { getEventInscriptionsEDC } from 'lib/services/firebase/utils/getData'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
@@ -19,20 +18,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       })
     }
 
-    const usersReservationsDB = await getUsersReservationsDB()
+    const usersReservationsDB = await getEventInscriptionsEDC()
 
     const usersReservations = usersReservationsDB.docs.map(doc => {
       return Object.values({
         date: doc.data().date,
+        ci: doc.data().ci,
         fullName: doc.data().fullName,
-        phone: doc.data().phone,
         email: doc.data().email,
-        reservations: doc.data().reservations,
-        schedule: config.RESERVATIONS.WORSHIPS[doc.data().worship]?.label
+        levelEDC: doc.data().levelEDC,
+        sector: doc.data().sector
       })
     })
 
-    const sendReservationsToExcelRes = await fetch('https://enwaablcmxwvagn.m.pipedream.net', {
+    const sendReservationsToExcelRes = await fetch('https://enjy8lvy9j8xen5.m.pipedream.net', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -43,12 +42,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (!sendReservationsToExcelRes.ok) {
       return res.status(500).json({
         data: null,
-        error: 'Error al enviar las reservaciones a pipedream'
+        error: 'Error al enviar las inscripcciones a pipedream'
       })
     }
 
     res.status(200).json({
-      data: 'Reservaciones registradas en pipedream!',
+      data: 'inscripcciones registradas en pipedream!',
       error: null
     })
   } else {

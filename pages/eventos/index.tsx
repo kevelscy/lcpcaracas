@@ -15,7 +15,7 @@ export const EventosPage: Page = () => {
     <>
       <Head>
         <title>{config.PAGE_INFO.SEO.pageTitle} - Eventos</title>
-        <meta name='description' content='Contacta a La Casa de mi Padre' />
+        <meta name='description' content='Eventos de La Casa de mi Padre' />
       </Head>
 
       <div className='min-h-screen w-full'>
