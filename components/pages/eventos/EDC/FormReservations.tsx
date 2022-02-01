@@ -111,7 +111,7 @@ export const FormEDCReservations = () => {
       </div>
 
       <Button classes='py-1 mt-4' tabIndex={6} type='submit'>
-      Reservar
+        Registrar
       </Button>
     </form>
   )
