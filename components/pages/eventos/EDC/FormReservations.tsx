@@ -36,8 +36,8 @@ export const FormEDCReservations = () => {
 
   return (
     <form className='w-full max-w-lg mx-auto text-center' onSubmit={handleSubmit(onSubmit)}>
-      <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Escuela de Crecimiento <br /> Inscripcciones</h3>
-      <span className='text-red-500'>Inscripcciones solo para bautizados</span>
+      <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Escuela de Crecimiento <br /> Inscripciones</h3>
+      <span className='text-red-500'>Inscripciones solo para bautizados</span>
       <br /><br />
 
       <div className='text-left'>
@@ -63,7 +63,7 @@ export const FormEDCReservations = () => {
           minLength={7}
           type='text'
           tabIndex={2}
-          placeholder='Cedula de Identidad'
+          placeholder='Cédula de Identidad'
           onInput={e => handleInputRegex(e)} value={inputCI}
         />
         {errors.ci && <p className='text-red-600'>{errors.ci.message}</p>}
