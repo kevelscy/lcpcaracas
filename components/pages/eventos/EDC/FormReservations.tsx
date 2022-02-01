@@ -25,6 +25,7 @@ export const FormEDCReservations = () => {
     }
 
     toast('¡Inscripccion Exitosa!', { type: 'success' })
+    setInputCI('')
     reset()
   }
 
