@@ -10,7 +10,7 @@ interface IDataFormReservation {
   email: string
   ci: string
   levelEDC: string
-  sector: string
+  phone: string
 }
 
 export const FormEDCReservations = () => {
@@ -69,17 +69,15 @@ export const FormEDCReservations = () => {
         {errors.ci && <p className='text-red-600'>{errors.ci.message}</p>}
 
         <input
-          className='inputText'
-          aria-label='sector'
-          name='sector'
-          {...register('sector', rules.sector)}
-          type='text'
-          autoCapitalize='word'
-          autoComplete='on'
-          tabIndex={3}
-          placeholder='Sector donde vive'
+          className='inputText mt-2'
+          aria-label="Teléfono"
+          name="phone"
+          {...register('phone', rules.phone)}
+          type="tel"
+          tabIndex={2}
+          placeholder="Teléfono"
         />
-        {errors.sector && <p className='text-red-600'>{errors.sector.message}</p> }
+        {errors.phone && <p className='text-red-600'>{errors.phone.message}</p> }
 
         <input
           className='inputText mt-2'

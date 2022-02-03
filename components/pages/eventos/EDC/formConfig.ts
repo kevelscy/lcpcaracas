@@ -6,11 +6,11 @@ export const rules = {
     pattern: { value: /^[a-zA-ZÀ-ÿ0-9 ()-.]*$/, message: 'Nombre o Apellido no permitido' }
   },
 
-  sector: {
-    required: { value: true, message: 'Sector obligatorio' },
-    maxLength: { value: 100, message: 'Maximo 100 letras' },
-    minLength: { value: 3, message: 'Minimo 3 letras' },
-    pattern: { value: /^[a-zA-ZÀ-ÿ0-9 ()-.]*$/, message: 'Caracteres no permitido' }
+  phone: {
+    required: { value: true, message: 'Telefono obligatorio' },
+    maxLength: { value: 15, message: 'Maximo 15 numeros' },
+    minLength: { value: 10, message: 'Minimo 10 numeros' },
+    pattern: { value: /^[0-9]*$/i, message: 'Solo Numeros' }
   },
 
   ci: {

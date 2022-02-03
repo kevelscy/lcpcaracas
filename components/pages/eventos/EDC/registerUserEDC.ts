@@ -7,7 +7,7 @@ interface IDataFormReservation {
   email: string
   ci: string
   levelEDC: string
-  sector: string
+  phone: string
 }
 
 export const registerUserEDC = async (reservation: IDataFormReservation) => {
@@ -19,7 +19,7 @@ export const registerUserEDC = async (reservation: IDataFormReservation) => {
     fullName: reservation.fullName,
     email: reservation.email,
     levelEDC: reservation.levelEDC,
-    sector: reservation.sector
+    phone: reservation.phone
   }
 
   console.log('saveUsersReservations => reservationToSend', reservationToSend)
