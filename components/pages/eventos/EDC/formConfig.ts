@@ -14,7 +14,7 @@ export const rules = {
   },
 
   ci: {
-    required: { value: true, message: 'Telefono obligatorio' },
+    required: { value: true, message: 'Cédula obligatoria' },
     maxLength: { value: 10, message: 'Maximo 8 numeros' },
     pattern: { value: /^[0-9.]*$/i, message: 'Solo Numeros' }
   },
