@@ -9,7 +9,7 @@ import { DefaultItem } from './Items'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 // import { LocalEvents2 } from './Items/LocalEvents2'
-import { LocalEvent } from './Items/LocalEvent'
+// import { LocalEvent } from './Items/LocalEvent'
 
 SwiperCore.use([Pagination, Autoplay])
 
@@ -27,9 +27,9 @@ export const Slider = () => {
             <DefaultItem />
           </SwiperSlide>
 
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <LocalEvent />
-          </SwiperSlide>
+          </SwiperSlide> */}
 
           {/* <SwiperSlide>
             <LocalEvents2 />
