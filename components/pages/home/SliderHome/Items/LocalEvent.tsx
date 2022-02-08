@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import eventSrcDesktop from 'public/img/banner/event2-desktop.webp'
-import eventSrcMobile from 'public/img/banner/event2-mobile.webp'
+import eventSrcDesktop from 'public/img/banner/event-desktop.webp'
+import eventSrcMobile from 'public/img/banner/event-mobile.webp'
 
 export const LocalEvent = () => (
   <div className='h-full'>

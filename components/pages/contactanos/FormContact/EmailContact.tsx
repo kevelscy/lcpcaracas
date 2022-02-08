@@ -20,7 +20,7 @@ export const EmailContact = () => {
       message: data.message
     }
 
-    fetch('https://enurp4m5z4savwe.m.pipedream.net', {
+    fetch('https://eott4hh0u1tstx2.m.pipedream.net', {
       method: 'POST',
       body: JSON.stringify(dataNormalize)
     }).then(() => {
