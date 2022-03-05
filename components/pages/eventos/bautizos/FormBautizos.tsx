@@ -4,6 +4,8 @@ import { toast } from 'react-toastify'
 import { Button } from 'components/common/Button'
 import { registerUserBautizos } from './registerUserBautizos'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
+import Link from 'next/link'
 
 interface IDataFormReservation {
   fullName: string
@@ -19,6 +21,7 @@ interface IDataFormReservation {
 
 export const FormBautizos = () => {
   const router = useRouter()
+  const [showGuide, setShowGuide] = useState(false)
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IDataFormReservation>()
 
   const onSubmit = async (data: IDataFormReservation) => {
@@ -30,7 +33,33 @@ export const FormBautizos = () => {
 
     toast('¡Inscripccion Exitosa!', { type: 'success' })
     reset()
+    setShowGuide(true)
     router.push('/')
+  }
+
+  if (showGuide) {
+    return (
+      <div className='text-center'>
+        <span className='text-5xl font-black'>Guia Un Nuevo Comienzo</span>
+        <br /><br />
+
+        <a
+          href='https://drive.google.com/file/d/1VlImZmqdX3oRZhdiiq-GTht85WUgKSA5/view?usp=sharing'
+          target='_blank'
+          rel='noopener noreferrer'
+          onClick={() => router.push('/')}
+          className='bg-secondary-500 filter hover:brightness-125 focus:brightness-125 text-white py-1 px-10 rounded-3xl min-w-176px font-bold xl:text-lg 4xl:text-xl xl:px-11 disabled:opacity-50 disabled:cursor-not-allowed'
+        >
+          Descargar Guia
+        </a>
+
+        <br /><br />
+
+        <Link href='/'>
+          <a className='text-lg underline text-secondary-500 xl:text-xl'>Ir al inicio</a>
+        </Link>
+      </div>
+    )
   }
 
   return (
@@ -56,12 +85,12 @@ export const FormBautizos = () => {
 
         <input
           className='inputText mt-2'
-          aria-label="Teléfono"
-          name="phone"
+          aria-label='Teléfono'
+          name='phone'
           {...register('phone', rules.phone)}
-          type="tel"
+          type='tel'
           tabIndex={2}
-          placeholder="Teléfono"
+          placeholder='Teléfono'
         />
         {errors.phone && <p className='text-red-600'>{errors.phone.message}</p> }
 
@@ -133,6 +162,7 @@ export const FormBautizos = () => {
             <option className='text-black' value='Soltero/a'>Soltero/a</option>
             <option className='text-black' value='Casado/a'>Casado/a</option>
             <option className='text-black' value='Divorsiado/a'>Divorsiado/a</option>
+            <option className='text-black' value='Divorsiado/a'>Viudo/a</option>
           </select>
           {errors.civilState && <p className='text-sm text-red-600'>{errors.civilState.message}</p>}
         </div>
@@ -177,7 +207,7 @@ export const FormBautizos = () => {
         {errors.lcpAsisted && <p className='text-red-600'>{errors.lcpAsisted.message}</p> }
       </div>
 
-      <Button classes='py-1 mt-4' tabIndex={10} type='submit'>
+      <Button disabled={showGuide} classes='py-1 mt-4' tabIndex={10} type='submit'>
         Registrar
       </Button>
     </form>

@@ -6,7 +6,7 @@ import { Page, ReactNode } from 'lib/types'
 import MainLayout from 'layouts/Main'
 import { config } from 'config'
 import { Event } from 'components/pages/eventos/Event'
-
+import imgSrcEvent from 'public/img/local-events/bautizoBg.webp'
 // import { Event } from 'components/pages/eventos/Event'
 
 export const EventosPage: Page = () => {
@@ -32,7 +32,7 @@ export const EventosPage: Page = () => {
           <ul className='flex flex-wrap justify-center items-center max-w-5xl mx-auto gap-x-2'>
             <li>
               <Event
-                imgSrc='/img/local-events/bautizoBg.webp'
+                imgSrc={imgSrcEvent}
                 title='Bautizos'
                 redirectTo='/eventos/bautizos'
                 redirectLabel='Inscripcción de Bautizos'

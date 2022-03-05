@@ -25,6 +25,7 @@ export const Event = ({ imgSrc, localImage, title, description, redirectTo, redi
             alt={title || 'Evento LCP'}
             layout='fill'
             objectFit="cover"
+            placeholder='blur'
           />
 
           {
