@@ -11,7 +11,8 @@ import {
   USERS_RESERVATION_DB_REF,
   EVENTS_DB_REF,
   PRODUCTS_DB_REF,
-  EDC_DB_REF
+  EDC_DB_REF,
+  BAUTIZOS_DB_REF
 } from './refs'
 
 // Reservaciones
@@ -31,6 +32,7 @@ export const getCategoriesDB = async () => await getDocs(CATEGORIES_DB_REF)
 // Eventos
 export const getEventsDB = async () => await getDocs(EVENTS_DB_REF)
 export const getEventInscriptionsEDC = async () => await getDocs(EDC_DB_REF)
+export const getEventInscriptionsBautizos = async () => await getDocs(BAUTIZOS_DB_REF)
 
 // Tienda
 export const gerProductsDB = async () => await getDocs(PRODUCTS_DB_REF)

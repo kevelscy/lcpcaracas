@@ -21,3 +21,4 @@ export const PRODUCTS_DB_REF = collection(db, 'shop', 'products', 'content')
 
 // Formularios/Registros - Eventos
 export const EDC_DB_REF = collection(db, 'events', 'edc', 'usersReservation')
+export const BAUTIZOS_DB_REF = collection(db, 'events', 'bautizos', 'usersReservation')
