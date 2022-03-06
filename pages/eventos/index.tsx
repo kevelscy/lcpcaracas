@@ -35,7 +35,7 @@ export const EventosPage: Page = () => {
                 imgSrc={imgSrcEvent}
                 title='Bautizos'
                 redirectTo='/eventos/bautizos'
-                redirectLabel='Inscripcción de Bautizos'
+                redirectLabel='Inscripción de Bautizos'
               />
             </li>
           </ul>

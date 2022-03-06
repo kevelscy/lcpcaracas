@@ -64,7 +64,7 @@ export const FormBautizos = () => {
 
   return (
     <form className='w-full max-w-lg mx-auto text-center px-4' onSubmit={handleSubmit(onSubmit)}>
-      <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Inscripcciones de <br /> Bautizos</h3>
+      <h3 className='text-4xl text-secondary-500 font-black xl:text-5xl 3xl:text-6xl'>Inscripciones de <br /> Bautizos</h3>
       {/* <span className='text-red-500'>Inscripciones solo para bautizados</span> */}
       {/* <br /> */}
       <br />
