@@ -34,7 +34,6 @@ export const FormBautizos = () => {
     toast('¡Inscripccion Exitosa!', { type: 'success' })
     reset()
     setShowGuide(true)
-    router.push('/')
   }
 
   if (showGuide) {
