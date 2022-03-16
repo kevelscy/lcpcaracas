@@ -1,12 +1,14 @@
 import Image from 'next/image'
 
-import headerHomeDefault from 'public/img/headerHomeDefault.webp'
-import headerHomeMobileDefault from 'public/img/headerHomeMobileDefault.webp'
+// import headerHomeDefault from 'public/img/headerHomeDefault.webp'
+// import headerHomeMobileDefault from 'public/img/headerHomeMobileDefault.webp'
+import ddddSrcDesktop from 'public/img/ddddBg-desktop.webp'
+import ddddSrcMobile from 'public/img/ddddBg-mobile.webp'
 
 export const DefaultItem = () => (
   <div className='h-full'>
     <div className='hidden sm:block'>
-      <Image
+      {/* <Image
         src={headerHomeDefault}
         alt='La Casa de mi Padre'
         placeholder='blur'
@@ -20,6 +22,27 @@ export const DefaultItem = () => (
       <Image
         src={headerHomeMobileDefault}
         alt='La Casa de mi Padre'
+        placeholder='blur'
+        layout='fill'
+        objectFit="cover"
+        quality={100}
+      />
+    </div> */}
+
+      <Image
+        src={ddddSrcDesktop}
+        alt='Dentro Del Diseño Divino'
+        placeholder='blur'
+        layout='fill'
+        objectFit="cover"
+        quality={100}
+      />
+    </div>
+
+    <div className='sm:hidden'>
+      <Image
+        src={ddddSrcMobile}
+        alt='Dentro Del Diseño Divino'
         placeholder='blur'
         layout='fill'
         objectFit="cover"
