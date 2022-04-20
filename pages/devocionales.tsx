@@ -1,21 +1,16 @@
+import { IconPDF } from 'components/common/Icons'
 import MainLayout from 'layouts/Main'
 import { Page, ReactNode } from 'lib/types'
 import { useEffect, useState } from 'react'
 
-const CARD_WIDTH_SIZE_PX = 300
-
 const DevocionalesPage: Page = () => {
-  const [files, setFiles] = useState([])
+  const [devotionals, setDevotionals] = useState([])
 
   const getFiles = async () => {
-    const res = await fetch('/devotionals/Aleluya Por Siempre Bateria.pdf')
+    const res = await fetch('/api/devotionals')
+    const { data } = await res.json()
 
-    const fileRes = {
-      title: decodeURI(res.url),
-      url: res.url
-    }
-
-    setFiles(prevState => ([...prevState, fileRes]))
+    setDevotionals(data)
   }
 
   useEffect(() => {
@@ -23,48 +18,21 @@ const DevocionalesPage: Page = () => {
   }, [])
 
   return (
-    <div className="w-full h-full mt-20">
-      <ul style={{ gridTemplateColumns: `repeat(auto-fit, minmax(${CARD_WIDTH_SIZE_PX}px, 1fr)` }} className='grid items-center justify-center justify-items-center gap-4 py-8 px-4'>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
-        <li className={`h-24 w-[${CARD_WIDTH_SIZE_PX}px] bg-[#F7F7F7] rounded shadow-md flex items-center justify-center`}>
-          <div className='bg-green-500 h-7 w-7 mr-2' />
-          <h1 className="text-xl truncate">Hello, World!</h1>
-        </li>
+    <div className='w-full h-full mt-36 text-center px-4'>
+      <h3 className='font-black text-4xl'>Devocionales</h3>
+      <span>Descarga los devocionales de La Casa de mi Padre haciendo click sobre ellas</span>
+
+      <ul className='grid grid-cols-3 gap-x-10 grid-flow-row max-w-7xl mx-auto mt-4'>
+        {
+          devotionals.map((file, idx) => (
+            <li key={idx}>
+              <a href={file.url} download className='h-24 w-full bg-[#F7F7F7] rounded shadow-sm flex items-center justify-start px-4 hover:bg-secondary-500 hover:bg-opacity-40 border-2 border-secondary-500 border-opacity-25'>
+                <IconPDF classes='h-7 w-7 mr-2' />
+                <h1 className='text-lg text-left'>{file.title}</h1>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   )
