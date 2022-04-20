@@ -12,7 +12,7 @@ export const Navbar = () => {
     leftItems: [
       { to: '/', label: 'Inicio' },
       { to: '/nosotros', label: 'Nosotros' },
-      { to: '/reservaciones', label: 'Reservaciones' },
+      { to: '/devocionales', label: 'Devocionales' },
       { to: '/', label: 'Tienda' }
     ],
     centerItem: <Logo />,

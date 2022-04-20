@@ -16,6 +16,11 @@ module.exports = withPWA({
         permanent: true,
       },
       {
+        source: '/reservaciones',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/eventos/bautizos',
         destination: '/eventos',
         permanent: true,
