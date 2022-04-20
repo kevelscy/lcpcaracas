@@ -19,7 +19,7 @@ const DevocionalesPage: Page = () => {
 
   return (
     <div className='w-full h-full mt-36 text-center px-4'>
-      <h3 className='font-black text-4xl'>Devocionales</h3>
+      <h3 className='font-black text-5xl text-secondary-500'>Devocionales</h3>
       <span>Descarga los devocionales de La Casa de mi Padre haciendo click sobre ellas</span>
 
       <ul className='grid grid-cols-3 gap-x-10 grid-flow-row max-w-7xl mx-auto mt-4'>
