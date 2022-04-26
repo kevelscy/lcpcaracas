@@ -1,10 +1,13 @@
 import { IconPDF } from 'components/common/Icons'
+import { Spinner } from 'components/common/Loaders'
 import MainLayout from 'layouts/Main'
 import { Page, ReactNode } from 'lib/types'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const DevocionalesPage: Page = () => {
   const [devotionals, setDevotionals] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const getFiles = async () => {
     const res = await fetch('/api/devotionals')
@@ -14,8 +17,29 @@ const DevocionalesPage: Page = () => {
   }
 
   useEffect(() => {
-    getFiles()
+    setLoading(true)
+    getFiles().then(() => setLoading(false))
   }, [])
+
+  if (loading) {
+    return (
+      <div className='w-full h-[80vh] flex justify-center items-center'>
+        <Spinner />
+      </div>
+    )
+  }
+
+  if (devotionals.length === 0 && !loading) {
+    return (
+      <div className='w-full h-[80vh] flex flex-col justify-center items-center'>
+        <p className='text-5xl font-black'>Sin Devocionales</p>
+
+        <Link href='/'>
+          <a className='text-lg text-secondary-500 xl:text-xl'>Ir al inicio</a>
+        </Link>
+      </div>
+    )
+  }
 
   return (
     <div className='w-full h-full mt-36 text-center px-4'>
