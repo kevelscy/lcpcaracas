@@ -9,7 +9,8 @@ export const Drawer = ({ isOpen, closeDrawer }: { isOpen: boolean, closeDrawer: 
   const { current: routesMobile } = useRef([
     { to: '/', label: 'Inicio' },
     { to: '/nosotros', label: 'Nosotros' },
-    { to: '/reservaciones', label: 'Reservaciones' },
+    // { to: '/reservaciones', label: 'Reservaciones' },
+    { to: '/devocionales', label: 'Devocionales' },
     { to: '/recursos/espiritu', label: 'Recursos' },
     { to: '/eventos', label: 'Eventos' },
     { to: '/contactanos', label: 'Contáctanos' },
