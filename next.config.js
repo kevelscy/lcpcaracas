@@ -28,6 +28,10 @@ module.exports = withPWA({
     ]
   },
 
+  serverRuntimeConfig: {
+    PROJECT_ROOT: __dirname
+  },
+
   images: {
     domains: [
       'firebasestorage.googleapis.com',
