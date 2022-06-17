@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /_next
+Disallow: /404
+
+# Host
+Host: https://lcpcaracas.org
+
+# sitemap
+Sitemap: https://lcpcaracas.org/sitemap.xml

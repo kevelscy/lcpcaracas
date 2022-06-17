@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 /*eslint-disable*/
-const withPWA = require('next-pwa')
 
-module.exports = withPWA({
+module.exports = {
   async redirects() {
     return [
       {
@@ -17,6 +16,16 @@ module.exports = withPWA({
       },
       {
         source: '/reservaciones',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/eventos',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/eventos/bautizos',
         destination: '/',
         permanent: true,
       },
@@ -43,4 +52,4 @@ module.exports = withPWA({
   },
 
   reactStrictMode: true,
-})
+}
