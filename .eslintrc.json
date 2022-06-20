@@ -5,7 +5,7 @@
         "node": true
     },
     "extends": [
-        "plugin:@next/next/recommended",
+        "next",
         "standard"
     ],
     "parser": "@typescript-eslint/parser",
