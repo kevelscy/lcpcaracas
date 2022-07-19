@@ -26,9 +26,9 @@ export const Slider = () => {
             <DefaultItem />
           </SwiperSlide>
 
-          <SwiperSlide>
+         {/* <SwiperSlide>
             <LocalEvent2 />
-          </SwiperSlide>
+          </SwiperSlide> */}
 
           {/* <SwiperSlide>
             <LocalEvent />
