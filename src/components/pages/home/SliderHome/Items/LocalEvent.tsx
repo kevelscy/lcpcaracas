@@ -38,7 +38,7 @@ export const LocalEvent2 = () => (
     <div className='hidden sm:block'>
       <Image
         // src={bannerDesktopSrc}
-        src='/img/banner/banner-desktop.webp'
+        src='/img/venezolanidad-2022.webp'
         alt='La Casa de mi Padre - Servicio Domingo'
         layout='fill'
         objectFit="cover"
@@ -50,7 +50,7 @@ export const LocalEvent2 = () => (
     <div className='sm:hidden'>
       <Image
         // src={bannerMobileSrc}
-        src='/img/banner/banner-mobile.webp'
+        src='/img/venezolanidad-2022-mobile.webp'
         alt='La Casa de mi Padre - Servicio de Domingo'
         layout='fill'
         objectFit="cover"
