@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { StaticImageData } from 'react-dom'
 
 interface IEventProps {
-  imgSrc: string | StaticImageData
+  imgSrc?: string | StaticImageData
   title?: string
   description?: string
   redirectTo?: string

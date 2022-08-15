@@ -5,7 +5,7 @@ import { FormBautizos } from 'components/pages/eventos/bautizos/FormBautizos'
 
 const { SEO } = PAGE_INFO
 
-export default function Custom500 () {
+export default function BautizosPage () {
   return (
     <>
       <Head>
