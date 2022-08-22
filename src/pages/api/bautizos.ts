@@ -19,7 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     })
   })
 
-  const sendReservationsToExcelRes = await fetch('https://enjy8lvy9j8xen5.m.pipedream.net', {
+  const sendReservationsToExcelRes = await fetch('https://en6d9u19uybfzdn.m.pipedream.net', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
