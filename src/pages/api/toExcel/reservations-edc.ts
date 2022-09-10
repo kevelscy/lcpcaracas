@@ -4,19 +4,19 @@ import fetch from 'node-fetch'
 import { getEventInscriptionsEDC } from 'lib/services/firebase/utils/getData'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === 'POST') {
-    if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
-      return res.status(401).json({ data: null, error: 'Missing Authorization Header' })
-    }
+  // if (req.method === 'POST') {
+  //   if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
+  //     return res.status(401).json({ data: null, error: 'Missing Authorization Header' })
+  //   }
 
-    const { isAuthenticated } = veryfyBasicAuth({ req })
+    // const { isAuthenticated } = veryfyBasicAuth({ req })
 
-    if (!isAuthenticated) {
-      return res.status(401).json({
-        data: null,
-        error: 'Invalid Authentication Credentials'
-      })
-    }
+    // if (!isAuthenticated) {
+    //   return res.status(401).json({
+    //     data: null,
+    //     error: 'Invalid Authentication Credentials'
+    //   })
+    // }
 
     const usersReservationsDB = await getEventInscriptionsEDC()
 
@@ -26,6 +26,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         ci: doc.data().ci,
         fullName: doc.data().fullName,
         email: doc.data().email,
+        phone: doc.data().phone,
         levelEDC: doc.data().levelEDC,
         sector: doc.data().sector
       })
@@ -50,10 +51,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       data: 'inscripcciones registradas en pipedream!',
       error: null
     })
-  } else {
-    res.status(405).json({
-      data: null,
-      error: 'No Permitido'
-    })
-  }
+  // } else {
+  //   res.status(405).json({
+  //     data: null,
+  //     error: 'No Permitido'
+  //   })
+  // }
 }

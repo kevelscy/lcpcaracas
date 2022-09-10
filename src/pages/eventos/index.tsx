@@ -7,7 +7,7 @@ import MainLayout from 'layouts/Main'
 import { PAGE_INFO } from 'config'
 import { Event } from 'components/pages/eventos/Event'
 // import { Event } from 'components/pages/eventos/Event'
-import imgSrcEvent from 'public/img/local-events/edc.webp'
+import imgSrcEvent from 'public/img/local-events/bautizoBg.webp'
 // import { Event } from 'components/pages/eventos/Event'
 
 const { SEO } = PAGE_INFO
@@ -24,7 +24,7 @@ export const EventosPage: Page = () => {
 
       <div className='h-screen-15 w-full'>
         <div className='w-full h-full flex flex-col justify-center items-center pt-32'>
-          <span className='text-4xl md:text-7xl font-black text-gray-900'>Sin Eventos</span>
+          {/* <span className='text-4xl md:text-7xl font-black text-gray-900'>Sin Eventos</span> */}
           {/* <br />
 
           <ul className='flex flex-wrap justify-center items-center max-w-5xl gap-x-2'>
@@ -41,7 +41,7 @@ export const EventosPage: Page = () => {
           {/* <Link href='/'>
             <a className='text-lg text-secondary-500 xl:text-xl underline underline-offset-1'>Ir al inicio</a>
           </Link> */}
-          {/* <span className='text-3xl md:text-5xl font-black text-gray-900'>Eventos</span>
+          <span className='text-3xl md:text-5xl font-black text-gray-900'>Eventos</span>
           <br />
 
           <ul className='flex flex-wrap justify-center items-center max-w-5xl mx-auto gap-x-2'>
@@ -53,7 +53,7 @@ export const EventosPage: Page = () => {
                 redirectLabel='Inscripción de Bautizos'
               />
             </li>
-          </ul> */}
+          </ul>
 
           {/* {
             events.length !== 0
