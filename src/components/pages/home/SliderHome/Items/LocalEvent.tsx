@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-// import eventSrcDesktop from 'public/img/banner/event-desktop.webp'
-// import eventSrcMobile from 'public/img/banner/event-mobile.webp'
+import eventSrcDesktop from 'public/img/banner/bautizosDesktop.webp'
+import eventSrcMobile from 'public/img/banner/bautizosMobile.webp'
 
 // import bannerDesktopSrc from 'public/img/banner/banner-desktop.webp'
 // import bannerMobileSrc from 'public/img/banner/banner-mobile.webp'
@@ -37,25 +37,25 @@ export const LocalEvent2 = () => (
   <div className='h-full'>
     <div className='hidden sm:block'>
       <Image
-        // src={bannerDesktopSrc}
-        src='/img/banner/agosto-desktop.webp'
+        src={eventSrcDesktop}
+        // src='/img/banner/agosto-desktop.webp'
         alt='La Casa de mi Padre - Servicio Domingo'
         layout='fill'
         objectFit="cover"
         quality={100}
-        // placeholder='blur'
+        placeholder='blur'
       />
     </div>
 
     <div className='sm:hidden'>
       <Image
-        // src={bannerMobileSrc}
-        src='/img/banner/agosto-mobile.webp'
+        src={eventSrcMobile}
+        // src='/img/banner/agosto-mobile.webp'
         alt='La Casa de mi Padre - Servicio de Domingo'
         layout='fill'
         objectFit="cover"
         quality={100}
-        // placeholder='blur'
+        placeholder='blur'
       />
     </div>
   </div>
