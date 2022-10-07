@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import eventSrcDesktop from 'public/img/banner/bautizosDesktop.webp'
-import eventSrcMobile from 'public/img/banner/bautizosMobile.webp'
+import eventSrcDesktop from 'public/img/banner/octubreDesktop.webp'
+import eventSrcMobile from 'public/img/banner/octubreMobile.webp'
 
 // import bannerDesktopSrc from 'public/img/banner/banner-desktop.webp'
 // import bannerMobileSrc from 'public/img/banner/banner-mobile.webp'
