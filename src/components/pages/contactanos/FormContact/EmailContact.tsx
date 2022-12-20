@@ -105,7 +105,7 @@ export const EmailContact = () => {
 
       <section>
         <a className='bg-secondary-500 filter hover:brightness-125 focus:brightness-125 text-white py-1.5 px-10 rounded-3xl min-w-176px font-bold xl:text-lg 4xl:text-xl xl:px-11 disabled:opacity-50 disabled:cursor-not-allowed'
-          href="https://www.google.com/maps/dir/10.5063888,-66.9343629/la+casa+de+mi+padre+caracas/@10.5057204,-66.935693,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8c2a592c872d39b7:0xd469b03a189c3d5b!2m2!1d-66.9007017!2d10.5021718" target="_blank" rel="noopener noreferrer"
+          href="https://goo.gl/maps/5PxnmWpDuxjNG3f49" target="_blank" rel="noopener noreferrer"
         >
           Cómo Llegar
         </a>
