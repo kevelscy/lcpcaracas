@@ -1,6 +1,7 @@
 .event_item {
   @apply bg-gray-500 rounded-xl overflow-hidden mb-5 md:flex-row md:mr-5;
-  width: 300px;
+  /* width: 300px; */
+  width: 100%;
   height: 350px;
 
   @media (min-width: 768px) {
