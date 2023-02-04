@@ -7,7 +7,8 @@ import MainLayout from 'layouts/Main'
 import { PAGE_INFO } from 'config'
 import { Event } from 'components/pages/eventos/Event'
 // import { Event } from 'components/pages/eventos/Event'
-import imgSrcEvent from 'public/img/local-events/bautizoBg.webp'
+import bautizosImgSrc from 'public/img/local-events/bautizoBg.webp'
+import edcImgSrc from 'public/img/local-events/edc.webp'
 // import { Event } from 'components/pages/eventos/Event'
 
 const { SEO } = PAGE_INFO
@@ -30,10 +31,19 @@ export const EventosPage: Page = () => {
           <ul className='flex flex-wrap justify-center items-center max-w-5xl gap-x-2'>
             <li>
               <Event
-                localImage={imgSrcEvent}
+                localImage={edcImgSrc}
                 title='Inscripciones EDC'
                 redirectTo='/eventos/edc'
                 redirectLabel='Inscripciones EDC'
+              />
+            </li>
+
+            <li>
+              <Event
+                imgSrc={bautizosImgSrc}
+                title='Bautizos'
+                redirectTo='/eventos/bautizos'
+                redirectLabel='Inscripción de Bautizos'
               />
             </li>
           </ul>
@@ -42,18 +52,11 @@ export const EventosPage: Page = () => {
             <a className='text-lg text-secondary-500 xl:text-xl underline underline-offset-1'>Ir al inicio</a>
           </Link> */}
           {/* <span className='text-3xl md:text-5xl font-black text-gray-900'>Eventos</span>
-          <br />
+          <br />*/}
 
-          <ul className='flex flex-wrap justify-center items-center max-w-5xl mx-auto gap-x-2'>
-            <li>
-              <Event
-                imgSrc={imgSrcEvent}
-                title='Bautizos'
-                redirectTo='/eventos/bautizos'
-                redirectLabel='Inscripción de Bautizos'
-              />
-            </li>
-          </ul> */}
+          {/* <ul className='flex flex-wrap justify-center items-center max-w-5xl mx-auto gap-x-2'> */}
+
+          {/* </ul> */}
 
           {/* {
             events.length !== 0

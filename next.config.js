@@ -19,21 +19,21 @@ module.exports = {
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/eventos',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/eventos/bautizos',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/eventos/bautizos',
-        destination: '/eventos',
-        permanent: true,
-      },
+      // {
+      //   source: '/eventos',
+      //   destination: '/',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/eventos/bautizos',
+      //   destination: '/',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/eventos/bautizos',
+      //   destination: '/eventos',
+      //   permanent: true,
+      // },
     ]
   },
 
